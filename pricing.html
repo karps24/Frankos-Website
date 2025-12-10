@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franko's Golf Center | Pricing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Franko's Golf Center</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <style>
+    /* Lightbox styles */
+    .gallery-grid a { display:inline-block; }
+    .gallery-grid img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+      transition: transform .2s ease;
+    }
+
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+    .lightbox-overlay.visible { display: flex; }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 95vw;
+      max-height: 95vh;
+      overflow: hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      transition: transform .2s ease;
+      cursor: zoom-in;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .lightbox-img.zoomed {
+      transform: scale(2);
+      cursor: zoom-out;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .lightbox-caption {
+      margin-top: 8px;
+      color: #fff;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width:600px) {
+      .lightbox-img.zoomed { transform: scale(1.4); }
+    }
+  </style>
+  </header>
+
+  <main>
+    <section>
+      <h2>Driving Range Pricing</h2>
+      <ul>
+        <li>Small bucket - $7</li>
+        <li>Medium bucket - $9</li>
+        <li>Large bucket - $11</li>
+        <li>Club Rental - $2</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Club Repair</h2>
+      <ul>
+        <li>Grip replacement - from $12</li>
+        <li>Shaft replacement - from $60</li>
+        <li>Club adjustments - from $5</li>
+        <li>For more information on club repairs please call us for your specific needs.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>PGA Instructor Lessons</h2>
+      <ul>
+        <li>Chris Kolar is available throughout the summer for private lessons. He is a PGA Class A memeber and has worked alongside 
+          owner Greg Franko for over 20 years. To get in contact with Chris for lessons, either call the pro shop at (724)-438-6651 or
+          stop in to recieve one of his business cards.</li>
+          <div class="gallery-grid">
+        <a href="Images/Kolar.jpg"><img src="Images/Kolar.jpg" alt="Chris Kolar"></a>
+      </div>
+
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Franko's Golf Center</p>
+  </footer>
+    <div id="lightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close (Esc)">&times;</button>
+      <img class="lightbox-img" alt="">
+    </div>
+    <div class="lightbox-caption" aria-live="polite"></div>
+  </div>
+
+  <script src="lightbox.js" defer></script>
+</body>
+</html>

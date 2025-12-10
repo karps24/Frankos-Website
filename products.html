@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franko's Golf Center | Products</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Lightbox styles */
+    .gallery-grid a { display:inline-block; }
+    .gallery-grid img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+      transition: transform .2s ease;
+    }
+
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+    .lightbox-overlay.visible { display: flex; }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 95vw;
+      max-height: 95vh;
+      overflow: hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      transition: transform .2s ease;
+      cursor: zoom-in;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .lightbox-img.zoomed {
+      transform: scale(2);
+      cursor: zoom-out;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .lightbox-caption {
+      margin-top: 8px;
+      color: #fff;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width:600px) {
+      .lightbox-img.zoomed { transform: scale(1.4); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Franko's Golf Center</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Pro Shop Products</h2>
+    <div class="gallery-grid">
+      <div class="product">
+        <a href="Images/Magnets.jpeg"><img src="Images/Magnets.jpeg" style="width:100%;height:auto;display:block;"></a>
+        <p>Golf Ball Magnets - $3.99</p>
+      </div>
+      <div class="product">
+        <a href="Images/Gloves.jpeg"><img src="Images/Gloves.jpeg" style="width:100%;height:auto;display:block;"></a>
+        <p>Golf Gloves from $18</p>
+      </div>
+      <div class="product">
+        <a href="Images/Drivers.jpeg"><img src="Images/Drivers.jpeg" style="width:100%;height:auto;display:block;"></a>
+        <p>Driver from $100</p>
+      </div>
+      <div class="product">
+        <a href="Images/Grips.jpeg"><img src="Images/Grips.jpeg" style="width:100%;height:auto;display:block;"></a>
+        <p>Grips from $12</p>
+      </div>
+      <div class="product">
+        <a href="Images/Tshirt.jpeg"><img src="Images/Tshirt.jpeg" style="width:100%;height:auto;display:block;"></a>
+        <p>T-shirt from $12</p>
+      </div>
+      <div class="product">
+        <a href="Images/Hats.jpeg"><img src="Images/Hats.jpeg" style="width:100%;height:auto;display:block;"></a>
+        <p>Hats from $27</p>
+      </div>
+      <div class="product">
+        <a href="Images/StyleGrips.jpeg"><img src="Images/StyleGrips.jpeg" style="width:100%;height:auto;display:block;"></a>
+        <p>Designed Putter Grips from $35</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Franko's Golf Center</p>
+  </footer>
+  <!-- Lightbox markup -->
+  <div id="lightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close (Esc)">&times;</button>
+      <img class="lightbox-img" alt="">
+    </div>
+    <div class="lightbox-caption" aria-live="polite"></div>
+  </div>
+
+  <script src="lightbox.js" defer></script>
+</body>
+</html>
